@@ -1,0 +1,58 @@
+SOURCE - https://www.youtube.com/watch?v=i9MHigUZKEM
+
+ALL THESE EXAMPLES ARE for learning while in college
+
+---------------- 10/21/2015
+01 General introduction
+angular allows us to extend html
+
+ng-app means angular app
+ng-app is a directive
+ng-model is another one and add a property called name in the scope
+
+{{ name }} is a databinding logic
+
+
+-----------------10/21/2015
+02 - Can also Iterating with NG-Repeat
+
+You can create API refrences using 
+https://docs.angularjs.org/api
+
+
+------- 10/21/2015
+03- using an angular JS filters can filter data
+
+to do this in the data-ng-repeat directive you put in filers
+ 
+such as "cust in customers | filter:name "
+this filters by name of person from input name directive
+
+to filter orderby You can go orderBy: 'city'
+
+Now to display them as uppercase/lower case 
+When you print them out by the databinding you add | uppercase
+{{ cust.name | uppercase}}
+
+
+
+------10/21/2015
+04- Views, Controllers, and scope
+
+Controller will handel which data get served or uses what service
+- Scope handels all tying in beween view between controller
+
+view model is the data bween the view and the controller
+
+
+$scope will inject a scope object that will serve as a source for the data.
+
+then use data-ng-controller in a dev to call the controller and will only last withing the div container
+
+NOTE THE controller will only last for the duration of where you placed it.
+
+<div>controller</div> VS { <div>controller<div> 100 lines of code</div></div> }
+
+
+
+

@@ -1,0 +1,29 @@
+--Node.js UDEMY.com
+
+--11/9/2015----------------------------------------
+--To get started with Node.js npm you run the command
+npm init
+--in your app directory. stands for node packaged modules
+-- a way of installing 3rd party libarys
+
+-- This creates the JSON(javascript object notation)
+-- file with all the app info for config
+
+JSON = JAVA script object notation
+-- to add a new module you type this case node-persist@0.0.6
+npm install {package name}@version --save
+-- so in the above case 
+npm install node-persist@0.0.6 --save
+
+-- this add the package then updates the confiquration package manager
+
+-- you can use npm to call other files instead of node file.js by editing 
+-- the package.json file and then calling npm the keyvalue pair
+
+
+
+----------------
+Getting user input
+
+npm install yargs@3.15.0
+

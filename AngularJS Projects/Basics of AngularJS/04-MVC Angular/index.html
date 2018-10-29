@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="../angular.min.js"></script>
+  </head>
+
+   <body data-ng-app="myApp">
+     
+	 
+	
+	
+	
+	<div data-ng-controller="SimpleController">
+	Name:
+	<br/>
+				<input type="text" data-ng-model="name" /> 
+				<br />
+				
+				<ul>
+					<li data-ng-repeat="cust in customers | filter:name | orderBy: 'city' ">
+						{{ cust.name }} . {{ cust.city }}</li>
+					
+				</ul>			    
+	</div>
+	
+		
+	
+	<script>
+	var app = angular.module("myApp",[]);
+
+	app.controller('SimpleController', function($scope)
+	{
+		$scope.customers = [
+			{ name: 'John Smith', city:'Phoenix'}, 
+		 	{ name: 'John Doe', city:'New York'},
+			{ name: 'Jane Doe', city:'San Francisco'}
+		];
+	})
+	
+
+	
+</script>
+	<p><a href="http://localhost/Developmentexamples/AngularJS/">Back</a></p>
+</body>
+
+
+</html>

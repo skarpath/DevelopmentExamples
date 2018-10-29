@@ -1,0 +1,53 @@
+Module can have something called a config 
+a config can have something called a route 
+
+The routes can track which page their on by 2 types
+- Views
+- Controller
+
+The scrope helps bind the view and controller togther
+now the controller has something called a factory underneath it to perform crud/services DATA
+
+views have directives SO look like this
+
+- Module
+- Config
+- Routes
+	- Views             <SCOPE>   - CONTROLLER
+	   ^ Directives						^ Factory (data)
+
+NOW modules are containers
+
+Modules/apps have ( THINK of this like as the appliction and everthing under as the pieces)
+- config
+	- routes
+- filter
+- directive
+- factory
+	- service
+	- Provider
+	- Value
+- Controller
+
+
+---- now to create a module you go. Array is used for dependency modules are modules you wish to use 
+var demoApp = angular.modules('demoAPP', []);
+
+--Creating a controller in a module
+
+var demoApp = angular.module('demoApp', []);
+
+demoApp.controller('simpleController', function ($scope) {
+	$scope.customers = [
+		{ name: 'Dave Jones', city: 'Phoenix'},
+		{ name: 'Dave Jones2', city: 'Phoenix2'}
+	];
+}
+
+
+
+
+
+ 
+STOPPED AT 42:16
+https://www.youtube.com/watch?v=i9MHigUZKEM

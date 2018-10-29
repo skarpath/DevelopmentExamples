@@ -1,0 +1,30 @@
+4/2/2012
+Angular.js notes
+--bootstrap is the way we 
+
+angular.module references a thrid party dependiency to pull into the application such as bootstrap
+
+after you type this into app you type in ng-app="APPNAME" into body tag
+
+anything in the tags are part of the apps 
+--------------------------------------------
+
+model - view - controller MVC
+model = database communication
+view = view
+controller - ties between model and view
+
+Angular takes MVC approach BUT
+
+model: property of scope
+view: html template
+Controller: business logic
+
+Scope = ties the controller and view together
+properties and functions
+
+concepts:
+has two way data bining - single source of truth - changes reflected automaticlly, App data stays in syn
+
+
+depency injection is allows use to get another piece of code and pass it in to another function kind of paramaters

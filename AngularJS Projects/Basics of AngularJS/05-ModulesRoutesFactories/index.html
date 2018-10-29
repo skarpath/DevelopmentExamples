@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="../angular.min.js"></script>
+  </head>
+
+   <body data-ng-app="demoApp">
+     
+	 
+	
+	
+	
+	<div data-ng-controller="SimpleController">
+	Name:
+	<br/>
+				<input type="text" data-ng-model="name" /> 
+				<br />
+				
+				<ul>
+					<li data-ng-repeat="cust in customers | filter:name | orderBy: 'city' ">
+						{{ cust.name }} . {{ cust.city }}</li>
+					
+				</ul>			    
+	</div>
+	
+		
+	
+	<script>
+	
+	
+	
+	
+	var demoApp = angular.module('demoApp', []);
+	var controllers = {};
+	
+	controllers.SimpleController = function($scope) {
+		$scope.customers = [
+			{ name: 'John Smith', city:'Phoenix'}, 
+		 	{ name: 'John Doe', city:'New York'},
+			{ name: 'Jane Doe', city:'San Francisco'}
+		];
+	};
+	
+	demoApp.controller(controllers);
+	
+
+	
+
+	
+</script>
+</body>
+
+
+</html>

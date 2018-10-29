@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">        
+		<title>ngCribs</title>    
+        
+        
+        
+        
+		<!--Loads bootstrap-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        
+      
+        <!--Load main Css file-->
+        <link rel="stylesheet" href="css/stylesheet.css">
+              
+	</head>
+
+	<body ng-app="ngCribs" ng-controller="cribsController">
+        
+                
+        <!--nav bar-->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand">ng-cribs</a>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+        
+       
+       <!-- Min and Max pricing-->
+    <div class="container">  
+      <div class="col-sm-12 price-form">
+          <div class="col-sm-6">
+               <div class="input-group">
+                   <span class="input-group-addon">Min Price</span>
+                   <select name="minPrice" id="minPrice" ng-model="priceInfo.min" class="form-control">
+                       <option value="100000">$100,000</option>
+                       <option value="200000">$200,000</option>
+                       <option value="300000">$300,000</option>
+                       <option value="400000">$400,000</option>
+                       <option value="500000">$500,000</option>
+                       <option value="600000">$600,000</option>
+                       <option value="700000">$700,000</option>
+                       <option value="800000">$800,000</option>
+                       <option value="900000">$900,000</option>
+                       <option value="1000000">$100,000,000</option>               
+                   </select>           
+               </div>        
+           </div>
+           
+           <div class="col-sm-6">
+               <div class="input-group">
+                   <span class="input-group-addon">Max Price</span>
+                   <select name="maxPrice" id="maxPrice" ng-model="priceInfo.max" class="form-control">
+                       <option value="100000">$100,000</option>
+                       <option value="200000">$200,000</option>
+                       <option value="300000">$300,000</option>
+                       <option value="400000">$400,000</option>
+                       <option value="500000">$500,000</option>
+                       <option value="600000">$600,000</option>
+                       <option value="700000">$700,000</option>
+                       <option value="800000">$800,000</option>
+                       <option value="900000">$900,000</option>
+                       <option value="1000000">$100,000,000</option>               
+                   </select>
+
+               </div>
+
+           </div>
+       </div>
+       
+        </div>  
+        
+        
+
+        
+        
+        
+        <!--Real Estate lisiting-->
+        <div class="container">
+            <div class="col-sm-4" ng-repeat="crib in cribs | cribsFilter:priceInfo">
+                <div class="thumbnail">
+                    <img ng-src="images/{{crib.image}}.jpg" alt="">
+                    
+                    
+                    
+                    <div id="caption">
+                        <div ng-hide="showDetails === true">
+                        <h3><i class="glyphicon glyphicon-tag"></i>{{crib.price | currency}}
+                        </h3>
+                        <h4>
+                            <i class="glyphicon glyphicon-home"></i>{{crib.address}}
+                            <span class="label label-primary label-sm">{{crib.type}}</span>
+                        </h4>
+                        
+                    </div>
+                    </div>
+                    
+                    <button class="btn btn-xs btn-success"
+                                ng-hide="showDetails === true"
+                                ng-click="showDetails = !showDetails">
+                                Details
+                    </button>
+                    
+                    
+                    
+                    
+                    <div class="details" ng-show="showDetails === true">
+                        <h4>
+                            <span class="label label-primary">Beds: {{crib.details.bedrooms}}
+                            </span>
+                            <span class="label label-primary">Baths: {{crib.details.bathrooms}}
+                            </span>
+                            <span class="label label-primary">SqFt: {{crib.details.area}}
+                            </span>
+                        </h4>
+                        <p>{{ crib.description}}</p>
+                    </div>
+                    
+                    <button class="btn btn-xs btn-danger"
+                                ng-show="showDetails === true"
+                                ng-click="showDetails = !showDetails">
+                                Close
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+   <script src="app.js"></script>
+   <script src="scripts/cribsController.js"></script>
+   <script src="scripts/CribsFactory.js"></script>
+    <script src="scripts/CribsFilter.js"></script>
+	
+</html>
