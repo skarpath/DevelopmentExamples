@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Currency Converter</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="txtViewAppTitle">Currency Converter</string>
+    <string name="convertToLabel">Convert to currency:</string>
+    <string name="ConvertFromCurrencyLabel">Convert from currency:</string>
+    <string name="textConversionResults">Conversion results:</string>
+    <string name="ConvertBtn">Convert</string>
+</resources>
